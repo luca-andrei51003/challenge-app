@@ -16,6 +16,9 @@ spec:
         image: culceanluca/py-web
         imagePullPolicy: Always
         resources:
+          requests:
+            memory: "512Mi"
+            cpu: "1000Mi"
           limits:
             memory: "1024Mi"
             cpu: "5000m"
