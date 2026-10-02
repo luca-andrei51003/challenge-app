@@ -13,7 +13,8 @@ spec:
     spec:
       containers:
       - name: challenge-app
-        image: culceanluca/py-web:latest
+        image: culceanluca/py-web
+        imagePullPolicy: Always
         resources:
           limits:
             memory: "128Mi"
