@@ -4,7 +4,7 @@ HTML_CONTENT = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Counter App</title>
+    <title>Counter App GitOps</title>
     <style>
         body {
             display: flex;
