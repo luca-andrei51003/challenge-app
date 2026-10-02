@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: challenge-app
+spec:
+  selector:
+    matchLabels:
+      app: challenge-app
+  template:
+    metadata:
+      labels:
+        app: challenge-app
+    spec:
+      containers:
+      - name: challenge-app
+        image: culceanluca/py-web:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5555
