@@ -1,1 +1,22 @@
 /local
+
+# Ignore local Terraform directory
+**/ .terraform/
+
+# Ignore state files
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Ignore variable files containing sensitive data
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore CLI configuration
+.terraformrc
+terraform.rc
