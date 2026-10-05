@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: challenge-app
-        image: culceanluca/py-web
+        image: culceanluca/py-web:latest
         imagePullPolicy: Always
         resources:
           requests:
