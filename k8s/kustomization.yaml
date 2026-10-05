@@ -6,4 +6,4 @@ resources:
 images:
 - name: deployment/challenge-app
   newName: culceanluca/py-web
-  newTag: eaf845a7333b26061af64addd5756a93e17032f6
+  newTag: dfac2bdccd5932f95d399052ec8773e4e4504915
