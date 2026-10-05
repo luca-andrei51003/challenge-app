@@ -1,5 +1,7 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+aux = 10
+
 class configuration(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
