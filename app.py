@@ -1,8 +1,5 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
-HTML_CONTENT = """
-"""
-
 class configuration(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
