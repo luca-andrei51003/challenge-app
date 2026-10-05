@@ -7,6 +7,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
@@ -37,5 +39,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -am "chore(deps): update challenge-app image tag to ${{ github.sha }} [skip ci]"
-          git push
+          git add k8s/deployment.yaml
+          if ! git diff --cached --quiet; then
+            git commit -am "chore(deps): update challenge-app image tag to ${{ github.sha }} [skip manual ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
