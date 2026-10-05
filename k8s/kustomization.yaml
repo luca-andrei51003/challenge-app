@@ -1,5 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - deployment.yaml
-  - service.yaml
+- deployment.yaml
+- service.yaml
+images:
+- name: deployment/challenge-app
+  newName: culceanluca/py-web
+  newTag: eaf845a7333b26061af64addd5756a93e17032f6
