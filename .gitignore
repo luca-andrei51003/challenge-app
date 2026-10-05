@@ -1,4 +1,4 @@
-/local
+/..local
 
 # Ignore local Terraform directory
 **/ .terraform/
