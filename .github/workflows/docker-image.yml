@@ -28,22 +28,3 @@ jobs:
           tags: |
             culceanluca/py-web:${{ github.sha }}
             culceanluca/py-web:latest
-
-      # 2. Update Kubernetes Manifests in Git
-      - name: Update Kubernetes Manifest Tag
-        run: |
-          cd k8s
-          kustomize edit set image deployment/challenge-app=culceanluca/py-web:${{ github.sha }}   
-
-      # 3. Commit and Push back to Git to trigger Argo CD
-      - name: Commit Manifest Changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add k8s/kustomization.yaml
-          if ! git diff --cached --quiet; then
-            git commit -am "chore(deps): update challenge-app image tag to ${{ github.sha }} [skip manual ci]"
-            git push
-          else
-            echo "No changes to commit."
-          fi
