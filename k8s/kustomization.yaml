@@ -3,7 +3,3 @@ kind: Kustomization
 resources:
 - deployment.yaml
 - service.yaml
-images:
-- name: deployment/challenge-app
-  newName: culceanluca/py-web
-  newTag: a8b6367faca0babc584647028ae866eab8ea39a3
